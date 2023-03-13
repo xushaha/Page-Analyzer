@@ -5,3 +5,5 @@
 
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/76c585dd3f0d022145c7/test_coverage)](https://codeclimate.com/github/xushaha/java-project-72/test_coverage)
+
+![Java CI](https://github.com/xushaha/java-project-72/workflows/github-actions.yml/badge.svg)
