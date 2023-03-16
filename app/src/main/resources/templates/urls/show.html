@@ -1,11 +1,29 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/application.html}">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/application.html}">
 
-<section layout:fragment="content">
-  <div class="container-lg mt-5">
-    <h1 th:text="'Сайт ' + *{url.getName()}"></h1>
-</div>
+<head>
+  <title>Анализатор страниц</title>
+</head>
 
+<section layout:fragment="header">
+  <div class="container-lg mt-5" th:object="${url}">
+    <h1 th:text="'Сайт ' + *{name}"></h1>
+    <table class="table table-bordered table-hover mt-3">
+      <tr>
+        <td>ID</td>
+        <td th:text="*{id}"></td>
+      </tr>
+      <tr>
+        <td>Имя</td>
+        <td th:text="*{name}"></td>
+      </tr>
+      <tr>
+        <td>Дата создания</td>
+        <td th:text="${#temporals.format(url.getCreatedAt(), 'dd/MM/yyyy HH:mm')}"></td>
+      </tr>
+    </table>
+  </div>
 </section>
 
 </html>
