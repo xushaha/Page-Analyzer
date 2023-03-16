@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/application.html}">
+
+<section layout:fragment="content">
+  <div class="container-lg mt-5">
+    <h1 th:text="'Сайт ' + *{url.getName()}"></h1>
+</div>
+
+</section>
+
+</html>
