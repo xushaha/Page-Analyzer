@@ -26,9 +26,9 @@ public class RootController {
         String name = ctx.formParam("url");
 
         if (name.isEmpty() || !(name.startsWith("http")) || !(name.startsWith("https"))) {
-           ctx.sessionAttribute("flash", "Ссылка некорректная");
-           ctx.sessionAttribute("flash-type", "danger");
-           ctx.redirect("/");
+            ctx.sessionAttribute("flash", "Ссылка некорректная");
+            ctx.sessionAttribute("flash-type", "danger");
+            ctx.redirect("/");
         }
 
 
