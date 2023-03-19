@@ -1,29 +1,63 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layouts/application.html}">
 
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Анализатор страниц</title>
+  <link rel='stylesheet' href='/webjars/bootstrap/5.1.1/css/bootstrap.min.css'>
+  <script src="/webjars/bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<section layout:fragment="header">
+<section layout:fragment="content">
   <div class="container-lg mt-5" th:object="${url}">
-    <h1 th:text="'Сайт ' + *{name}"></h1>
+    <h1 th:text="'Страница ' + *{getName()}"></h1>
+
     <table class="table table-bordered table-hover mt-3">
+      <tbody>
       <tr>
         <td>ID</td>
-        <td th:text="*{id}"></td>
+        <td th:text="*{getId()}">1</td>
       </tr>
       <tr>
         <td>Имя</td>
-        <td th:text="*{name}"></td>
+        <td th:text="*{getName()}"></td>
       </tr>
       <tr>
         <td>Дата создания</td>
-        <td th:text="${#temporals.format(url.getCreatedAt(), 'dd/MM/yyyy HH:mm')}"></td>
+        <td th:text="*{#temporals.format(getCreatedAt(), 'dd/MM/yyyy HH:mm')}"></td>
       </tr>
+      </tbody>
+    </table>
+
+    <h2 class="mt-5">Проверки</h2>
+    <form method="post" th:action="@{/urls/{id}/checks(id=*{getId()})}">
+      <button type="submit" class="btn btn-primary">Проверить</button>
+    </form>
+
+    <table class="table table-bordered table-hover mt-3">
+      <thead>
+      <tr>
+        <th class="col-1">ID</th>
+        <th class="col-1">Код ответа</th>
+        <th>Название</th>
+        <th>Заголовок</th>
+        <th>Описание</th>
+        <th class="col-2">Дата проверки</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="urlCheck : ${url.getUrlChecks()}" th:object="${urlCheck}">
+        <td th:text="*{getId()}"></td>
+        <td th:text="*{getStatusCode()}"></td>
+        <td th:text="*{getTitle()}"></td>
+        <td th:text="*{getH1()}"></td>
+        <td th:text="*{getDescription()}"></td>
+        <td th:text="*{#temporals.format(getCreatedAt(), 'dd/MM/yy HH:mm')}"></td>
+      </tr>
+      </tbody>
     </table>
   </div>
 </section>
-
 </html>

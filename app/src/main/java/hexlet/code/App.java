@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import hexlet.code.controllers.RootController;
+import hexlet.code.controllers.UrlController;
 import io.javalin.Javalin;
 import io.javalin.plugin.rendering.template.JavalinThymeleaf;
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
@@ -10,18 +11,22 @@ import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
-
 public class App {
 
     public static void main(String[] args) {
         Logger logger = LoggerFactory.getLogger(App.class);
-        logger.info("Page loaded");
         Javalin app = getApp();
         app.start();
+        logger.info("Page loaded");
     }
 
     private static String getMode() {
         return System.getenv().getOrDefault("APP_ENV", "development");
+    }
+
+    private static int getPort() {
+        String port = System.getenv().getOrDefault("PORT", "8080");
+        return Integer.valueOf(port);
     }
 
     private static boolean isProduction() {
@@ -47,12 +52,12 @@ public class App {
         return app;
     }
 
-
     private static void addRoutes(Javalin app) {
         app.get("/", RootController.welcome);
-        app.post("/urls", RootController.addUrl);
-        app.get("/urls", RootController.listUrls);
-        app.get("/urls/{id}", RootController.showUrl);
+        app.post("/urls", UrlController.addUrl);
+        app.get("/urls", UrlController.listUrls);
+        app.get("/urls/{id}", UrlController.showUrl);
+        app.post("urls/{id}/checks", UrlController.checkUrl);
     }
 
 

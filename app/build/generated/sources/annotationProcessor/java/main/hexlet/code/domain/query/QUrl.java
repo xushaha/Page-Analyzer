@@ -1,6 +1,7 @@
 package hexlet.code.domain.query;
 
 import hexlet.code.domain.Url;
+import hexlet.code.domain.query.assoc.QAssocUrlCheck;
 import io.ebean.Database;
 import io.ebean.FetchGroup;
 import io.ebean.Query;
@@ -34,6 +35,7 @@ public class QUrl extends TQRootBean<Url,QUrl> {
   public PLong<QUrl> id;
   public PString<QUrl> name;
   public PInstant<QUrl> createdAt;
+  public QAssocUrlCheck<QUrl> urlChecks;
 
 
   /**
@@ -105,5 +107,6 @@ public class QUrl extends TQRootBean<Url,QUrl> {
     public static PLong<QUrl> id = _alias.id;
     public static PString<QUrl> name = _alias.name;
     public static PInstant<QUrl> createdAt = _alias.createdAt;
+    public static QAssocUrlCheck<QUrl> urlChecks = _alias.urlChecks;
   }
 }

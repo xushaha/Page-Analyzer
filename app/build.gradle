@@ -1,80 +1,90 @@
 plugins {
     id 'application'
     id 'checkstyle'
-    id 'com.adarshr.test-logger' version '3.0.0'
-    id 'com.github.ben-manes.versions' version '0.39.0'
-    id 'io.ebean' version '12.12.1'
     id 'jacoco'
+    id 'com.adarshr.test-logger' version '3.2.0'
+    id 'com.github.ben-manes.versions' version '0.42.0'
+    id 'io.ebean' version '13.6.5'
 }
 
-group = 'hexlet.code'
-version = '1.0-SNAPSHOT'
+group 'hexlet.code'
+version '1.0-SNAPSHOT'
+
+application {
+    mainClass = 'hexlet.code.App'
+}
 
 repositories {
     mavenCentral()
+}
+
+dependencies {
+    implementation 'io.javalin:javalin:4.3.0'
+    implementation 'org.slf4j:slf4j-simple:1.7.36'
+
+    implementation 'org.thymeleaf:thymeleaf:3.0.15.RELEASE'
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.1.0'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-java8time:3.0.4.RELEASE'
+    implementation 'org.webjars:bootstrap:5.2.3'
+
+    implementation 'com.h2database:h2:2.1.214'
+    implementation 'org.postgresql:postgresql:42.3.3'
+
+    implementation 'com.konghq:unirest-java:3.13.6'
+    implementation 'org.jsoup:jsoup:1.15.3'
+    implementation 'com.konghq:unirest-java-core:4.0.0-RC4'
+
+    implementation 'io.ebean:ebean:13.11.0'
+    implementation 'io.ebean:ebean-ddl-generator:13.11.0'
+    implementation 'io.ebean:ebean-querybean:13.11.0'
+    implementation 'io.ebean:ebean-migration:13.6.2'
+    implementation 'io.ebean:ebean-annotation:8.3'
+    // Эта зависимость нужна для работы генератора запросов
+    annotationProcessor 'io.ebean:querybean-generator:13.11.0'
+
+    // NOTE: ebean-ddl-generator требует старые зависимости, которых нет в java 9 и выше
+    implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.5'
+    implementation 'javax.activation:activation:1.1.1'
+
+    testImplementation 'org.assertj:assertj-core:3.22.0'
+    testImplementation 'io.ebean:ebean-test:13.11.0'
+    testImplementation 'com.konghq:unirest-java:3.13.6'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testImplementation 'com.squareup.okhttp3:mockwebserver:4.10.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 
 compileJava {
     options.release = 17
 }
 
-application {
-    mainClass = 'hexlet.code.App'
-}
-
-dependencies {
-    implementation 'io.javalin:javalin:4.1.0'
-    implementation 'org.slf4j:slf4j-simple:1.7.32'
-
-    implementation 'org.thymeleaf:thymeleaf:3.0.12.RELEASE'
-    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.0.0'
-    implementation 'org.thymeleaf.extras:thymeleaf-extras-java8time:3.0.4.RELEASE'
-    implementation 'org.webjars:bootstrap:5.1.1'
-
-    implementation 'com.h2database:h2:1.4.200'
-    implementation 'org.postgresql:postgresql:42.2.24'
-
-    implementation 'io.ebean:ebean:12.12.1'
-    implementation 'io.ebean:ebean-ddl-generator:12.12.1'
-    implementation 'io.ebean:ebean-querybean:12.12.1'
-    implementation 'io.ebean:ebean-migration:12.12.1'
-    implementation 'io.ebean:ebean-annotation:7.3'
-    annotationProcessor 'io.ebean:querybean-generator:12.12.1'
-
-    // NOTE: ebean-ddl-generator требует старые зависимости, которых нет в java 9 и выше
-    implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.5'
-    implementation 'javax.activation:activation:1.1.1'
-    implementation 'org.jsoup:jsoup:1.14.3'
-    implementation 'com.konghq:unirest-java:3.13.0'
-
-
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.8.1'
-    testImplementation 'org.assertj:assertj-core:3.21.0'
-    testImplementation 'io.ebean:ebean-test:12.12.1'
-    testImplementation 'com.squareup.okhttp3:mockwebserver:4.9.1'
-}
-
-tasks.withType(JavaCompile) {
-    options.encoding = "UTF-8"
+checkstyle {
+    toolVersion '9.0'
+    checkstyleTest.enabled = false
 }
 
 test {
     useJUnitPlatform()
-}
-
-testlogger {
-    showStandardStreams true
+    finalizedBy jacocoTestReport
 }
 
 jacocoTestReport {
+    dependsOn test
     reports {
-        xml.required = true
+        xml.enabled = true
     }
 }
 
-checkstyle {
-    toolVersion '9.0'
+configurations {
+    runtime
+}
+
+testlogger {
+    showStandardStreams = true
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
 }
 
 task generateMigrations(type: JavaExec) {

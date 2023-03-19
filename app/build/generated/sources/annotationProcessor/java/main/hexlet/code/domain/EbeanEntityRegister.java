@@ -6,11 +6,11 @@ import java.util.List;
 import io.ebean.typequery.Generated;
 
 import io.ebean.config.ModuleInfo;
-import io.ebean.config.ModuleInfoLoader;
+import io.ebean.config.EntityClassRegister;
 
 @Generated("io.ebean.querybean.generator")
-@ModuleInfo(entities={"hexlet.code.domain.Url"})
-public class _Ebean$ModuleInfo implements ModuleInfoLoader {
+@ModuleInfo(entities={"hexlet.code.domain.Url","hexlet.code.domain.UrlCheck"})
+public class EbeanEntityRegister implements EntityClassRegister {
 
   /**
    * Register AttributeConverter etc
@@ -25,6 +25,7 @@ public class _Ebean$ModuleInfo implements ModuleInfoLoader {
   private List<Class<?>> defaultEntityClasses() {
     List<Class<?>> entities = new ArrayList<>();
     entities.add(hexlet.code.domain.Url.class);
+    entities.add(hexlet.code.domain.UrlCheck.class);
     return entities;
   }
 

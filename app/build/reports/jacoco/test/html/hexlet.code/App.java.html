@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>App.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">hexlet.code</a> &gt; <span class="el_source">App.java</span></div><h1>App.java</h1><pre class="source lang-java linenums">package hexlet.code;
+
+import hexlet.code.controllers.RootController;
+import hexlet.code.controllers.UrlController;
+import io.javalin.Javalin;
+import io.javalin.plugin.rendering.template.JavalinThymeleaf;
+import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
+import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
+
+<span class="nc" id="L14">public class App {</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L17">        Logger logger = LoggerFactory.getLogger(App.class);</span>
+<span class="nc" id="L18">        Javalin app = getApp();</span>
+<span class="nc" id="L19">        app.start();</span>
+<span class="nc" id="L20">        logger.info(&quot;Page loaded&quot;);</span>
+<span class="nc" id="L21">    }</span>
+
+    private static String getMode() {
+<span class="fc" id="L24">        return System.getenv().getOrDefault(&quot;APP_ENV&quot;, &quot;development&quot;);</span>
+    }
+
+    private static int getPort() {
+<span class="nc" id="L28">        String port = System.getenv().getOrDefault(&quot;PORT&quot;, &quot;8080&quot;);</span>
+<span class="nc" id="L29">        return Integer.valueOf(port);</span>
+    }
+
+    private static boolean isProduction() {
+<span class="fc" id="L33">        return getMode().equals(&quot;production&quot;);</span>
+    }
+
+    public static Javalin getApp() {
+
+<span class="fc" id="L38">        Javalin app = Javalin.create(config -&gt; {</span>
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">            if (!isProduction()) {</span>
+<span class="fc" id="L40">                config.enableDevLogging();</span>
+            }
+<span class="fc" id="L42">            config.enableWebjars();</span>
+<span class="fc" id="L43">            JavalinThymeleaf.configure(getTemplateEngine());</span>
+<span class="fc" id="L44">        });</span>
+
+<span class="fc" id="L46">        addRoutes(app);</span>
+
+<span class="fc" id="L48">        app.before(ctx -&gt; {</span>
+<span class="fc" id="L49">            ctx.attribute(&quot;ctx&quot;, ctx);</span>
+<span class="fc" id="L50">        });</span>
+
+<span class="fc" id="L52">        return app;</span>
+    }
+
+    private static void addRoutes(Javalin app) {
+<span class="fc" id="L56">        app.get(&quot;/&quot;, RootController.welcome);</span>
+<span class="fc" id="L57">        app.post(&quot;/urls&quot;, UrlController.addUrl);</span>
+<span class="fc" id="L58">        app.get(&quot;/urls&quot;, UrlController.listUrls);</span>
+<span class="fc" id="L59">        app.get(&quot;/urls/{id}&quot;, UrlController.showUrl);</span>
+<span class="fc" id="L60">        app.post(&quot;urls/{id}/checks&quot;, UrlController.checkUrl);</span>
+<span class="fc" id="L61">    }</span>
+
+
+    private static TemplateEngine getTemplateEngine() {
+        // Создаём инстанс движка шаблонизатора
+<span class="fc" id="L66">        TemplateEngine templateEngine = new TemplateEngine();</span>
+        // Добавляем к нему диалекты
+<span class="fc" id="L68">        templateEngine.addDialect(new LayoutDialect());</span>
+<span class="fc" id="L69">        templateEngine.addDialect(new Java8TimeDialect());</span>
+        // Настраиваем преобразователь шаблонов, так, чтобы обрабатывались
+        // шаблоны в директории /templates/
+<span class="fc" id="L72">        ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();</span>
+<span class="fc" id="L73">        templateResolver.setPrefix(&quot;/templates/&quot;);</span>
+        // Добавляем преобразователь шаблонов к движку шаблонизатора
+<span class="fc" id="L75">        templateEngine.addTemplateResolver(templateResolver);</span>
+
+<span class="fc" id="L77">        return templateEngine;</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

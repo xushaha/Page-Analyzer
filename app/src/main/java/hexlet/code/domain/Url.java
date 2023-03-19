@@ -6,7 +6,9 @@ import io.ebean.annotation.WhenCreated;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.time.Instant;
+import java.util.List;
 
 
 @Entity
@@ -16,11 +18,11 @@ public class Url extends Model {
     // Значение будет генерироваться автоматически
     @Id //Specifies the primary key of an entity.
     private long id;
-
     private String name;
-
     @WhenCreated // Значение будет генерироваться автоматически
     private Instant createdAt;
+    @OneToMany
+    private List<UrlCheck> urlChecks;
 
     public Url(String name) {
         this.name = name;
@@ -37,5 +39,9 @@ public class Url extends Model {
 
     public Instant getCreatedAt() {
         return createdAt;
+    }
+
+    public List<UrlCheck> getUrlChecks() {
+        return urlChecks;
     }
 }

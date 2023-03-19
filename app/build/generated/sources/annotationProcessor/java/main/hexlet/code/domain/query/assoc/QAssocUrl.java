@@ -23,6 +23,7 @@ public class QAssocUrl<R> extends TQAssocBean<Url,R> {
   public PLong<R> id;
   public PString<R> name;
   public PInstant<R> createdAt;
+  public QAssocUrlCheck<R> urlChecks;
 
   /**
    * Eagerly fetch this association loading the specified properties.

@@ -13,7 +13,7 @@ public class MigrationGenerator {
 
         // Указываем платформу
         dbMigration.addPlatform(Platform.H2, "h2");
-        //dbMigration.addPlatform(Platform.POSTGRES, "postgres");
+        dbMigration.addPlatform(Platform.POSTGRES, "postgres");
 
         // Генерируем миграцию
         dbMigration.generateMigration();
