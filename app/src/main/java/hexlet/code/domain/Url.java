@@ -12,7 +12,7 @@ import java.util.List;
 
 
 @Entity
-public class Url extends Model {
+public final class Url extends Model {
 
     // Указываем, что поле является первичным ключом
     // Значение будет генерироваться автоматически
