@@ -9,4 +9,4 @@
 [![Actions Status](https://github.com/xushaha/java-project-72/workflows/Java%20CI/badge.svg)](https://github.com/xushaha/java-project-72/actions)
 
 
-[Page Analyzer] (https://page-analyzer-ho03.onrender.com/) – сайт, который анализирует указанные страницы на SEO пригодность. Веб-сайт выполнен на базе фреймворка Javalin
+[Page Analyzer](https://page-analyzer-ho03.onrender.com/)– сайт, который анализирует указанные страницы на SEO пригодность. Веб-сайт выполнен на базе фреймворка Javalin
