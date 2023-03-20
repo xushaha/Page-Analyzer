@@ -51,7 +51,7 @@ public class UrlController {
 
         Url urlForSave = new Url(normalizedUrl);
         save(urlForSave);
-        ctx.sessionAttribute("flash", "Ссылка успешно добавлена");
+        ctx.sessionAttribute("flash", "Страница успешно добавлена");
         ctx.sessionAttribute("flash-type", "success");
 
         ctx.redirect("/urls");
@@ -125,7 +125,7 @@ public class UrlController {
             UrlCheck urlCheck = new UrlCheck(statusCode, title, h1, description, url);
             urlCheck.save();
 
-            ctx.sessionAttribute("flash", "Страница проверена");
+            ctx.sessionAttribute("flash", "Страница успешно проверена");
             ctx.sessionAttribute("flash-type", "success");
 
         } catch (UnirestException e) {

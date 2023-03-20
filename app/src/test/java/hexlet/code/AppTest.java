@@ -106,7 +106,7 @@ public class AppTest {
 
         assertThat(response.getStatus()).isEqualTo(200);
         assertThat(body).contains(testUrl);
-        assertThat(body).contains("Ссылка успешно добавлена");
+        assertThat(body).contains("Страница успешно добавлена");
 
         // Проверяем, что ссылка добавлена в БД
         Url actualUrl = new QUrl()
@@ -223,7 +223,7 @@ public class AppTest {
                 .asString();
 
         String responseBody = responseResult.getBody();
-        assertThat(responseBody).contains("Страница проверена");
+        assertThat(responseBody).contains("Страница успешно проверена");
         assertThat(responseResult.getStatus()).isEqualTo(200);
 
         UrlCheck check = new QUrlCheck()
