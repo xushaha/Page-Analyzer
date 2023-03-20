@@ -53,6 +53,6 @@ jobs:
         with:
           context: .
           push: true
-          cache-from: hexletcomponents/java-javalin-blog:latest
+          cache-from: xushaha/java-project-72:latest
           cache-to: type=inline
-          tags: hexletcomponents/java-javalin-blog:latest
+          tags: xushaha/java-project-72:latest
