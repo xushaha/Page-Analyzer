@@ -43,9 +43,9 @@ public class UrlController {
                 .findOne();
 
         if (urlFromDb != null) {
-            ctx.sessionAttribute("flash", "Ссылка уже существует");
+            ctx.sessionAttribute("flash", "Ссылка уже добавлена");
             ctx.sessionAttribute("flash-type", "info");
-            ctx.redirect("/");
+            ctx.redirect("/urls");
             return;
         }
 

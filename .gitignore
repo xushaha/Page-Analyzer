@@ -1,3 +1,9 @@
 app/.gradle
+
 app/.idea
+
 .idea
+
+*.db
+
+**/logs/

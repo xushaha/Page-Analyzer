@@ -23,13 +23,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">8</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">2.169s</div>
+<div class="counter">2.744s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,113 +61,13 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Tests</a>
-</li>
-<li>
-<a href="#tab2">Standard error</a>
+<a href="#tab1">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="testCheckUrl()"></a>
-<h3 class="failures">testCheckUrl()</h3>
-<span class="code">
-<pre>java.lang.ClassCastException: class io.ebean.common.BeanList cannot be cast to class hexlet.code.domain.UrlCheck (io.ebean.common.BeanList and hexlet.code.domain.UrlCheck are in unnamed module of loader 'app')
-	at hexlet.code.AppTest.testCheckUrl(AppTest.java:180)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy2/jdk.proxy2.$Proxy5.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -178,16 +78,51 @@
 </tr>
 </thead>
 <tr>
-<td class="failures">testCheckUrl()</td>
-<td class="failures">2.169s</td>
-<td class="failures">failed</td>
+<td class="success">testAddCorrectUrl()</td>
+<td class="success">0.056s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testAddDuplicateUrl()</td>
+<td class="success">0.110s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testAddIncorrectUrl()</td>
+<td class="success">0.025s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testCheckUrl()</td>
+<td class="success">2.448s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testInit()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testListUrls()</td>
+<td class="success">0.032s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testMain()</td>
+<td class="success">0.040s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testShowUrl()</td>
+<td class="success">0.026s</td>
+<td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab2" class="tab">
+<div id="tab1" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>[Test worker] INFO org.eclipse.jetty.util.log - Logging initialized @1219ms to org.eclipse.jetty.util.log.Slf4jLog
+<pre>[Test worker] INFO org.eclipse.jetty.util.log - Logging initialized @1325ms to org.eclipse.jetty.util.log.Slf4jLog
 [Test worker] INFO io.javalin.Javalin - Static file handler added: StaticFileConfig(hostedPath=/, directory=META-INF/resources/webjars, location=CLASSPATH, precompress=false, aliasCheck=null, headers={Cache-Control=max-age=31622400}, skipFileFunction=Function1&lt;javax.servlet.http.HttpServletRequest, java.lang.Boolean&gt;). File system location: 'jar:file:/home/xushaha/.gradle/caches/modules-2/files-2.1/org.webjars/bootstrap/5.2.3/4abbab7b738ab59b25ae6081b9b30bb7779741fd/bootstrap-5.2.3.jar!/META-INF/resources/webjars'
 [Test worker] INFO io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: GET[/]
 [Test worker] INFO io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: POST[/urls]
@@ -205,60 +140,191 @@
           https://javalin.io/documentation
 
 [Test worker] INFO io.javalin.Javalin - Starting Javalin ...
-[Test worker] INFO io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022. Your Javalin version is 429 days old. Consider checking for a newer version.).
-[Test worker] INFO io.javalin.Javalin - Listening on http://localhost:42643/
-[Test worker] INFO io.javalin.Javalin - Javalin started in 228ms \o/
+[Test worker] INFO io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022. Your Javalin version is 430 days old. Consider checking for a newer version.).
+[Test worker] INFO io.javalin.Javalin - Listening on http://localhost:33069/
+[Test worker] INFO io.javalin.Javalin - Javalin started in 261ms \o/
 [Test worker] INFO io.ebean - ebean version: 13.11.0
 [Test worker] INFO io.avaje.config - Loaded properties from [resource:application.yaml, resource:application-test.yaml] 
-[ForkJoinPool.commonPool-worker-2] INFO io.ebean.test - Using jdbc settings - username:sa url:jdbc:h2:mem:test driver:org.h2.Driver
+[ForkJoinPool.commonPool-worker-1] INFO io.ebean.test - Using jdbc settings - username:sa url:jdbc:h2:mem:test driver:org.h2.Driver
 [Test worker] INFO io.ebean.test - For testing purposes a current user and tenant provider has been configured. Use io.ebean.test.UserContext to set current user and tenant in tests.
-[Test worker] INFO io.ebean.datasource - DataSourcePool [${APP_ENV}] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200] in[356ms]
+[Test worker] INFO io.ebean.datasource - DataSourcePool [${APP_ENV}] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200] in[353ms]
 [Test worker] INFO io.ebean.DDL - Executing ${APP_ENV}-drop-all.sql - 4 statements, autoCommit:true
 [Test worker] INFO io.ebean.DDL - Executing ${APP_ENV}-create-all.sql - 4 statements, autoCommit:false
 [Test worker] INFO io.ebean.DDL - Executing seed-test-db.sql - 1 statements, autoCommit:false
-[Test worker] INFO io.ebean.core - Started database[${APP_ENV}] platform[H2] in 1,378ms
+[Test worker] INFO io.ebean.core - Started database[${APP_ENV}] platform[H2] in 1,441ms
 [Test worker] INFO io.ebean.DDL - Executing /truncate.sql - 4 statements, autoCommit:false
 [Test worker] INFO io.ebean.DDL - Executing /seed-test-db.sql - 1 statements, autoCommit:false
 [JettyServerThreadPool-24] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
 Request: POST [/urls]
     Matching endpoint-handlers: [BEFORE=*, POST=/urls]
-    Headers: {User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:42643, Accept-Encoding=gzip, Content-Length=37, Content-Type=application/x-www-form-urlencoded; charset=UTF-8}
+    Headers: {User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:33069, Accept-Encoding=gzip, Content-Length=37, Content-Type=application/x-www-form-urlencoded; charset=UTF-8}
     Cookies: {}
-    Body: url=http%3A%2F%2Flocalhost%3A60575%2F
+    Body: url=http%3A%2F%2Flocalhost%3A58433%2F
     QueryString: null
     QueryParams: {}
-    FormParams: {url=[http://localhost:60575/]}
-Response: [302], execution took 138.76 ms
-    Headers: {Set-Cookie=JSESSIONID=node016fg0sxmy6e4j1k79q5gfmmm320.node0; Path=/; HttpOnly, Expires=Thu, 01 Jan 1970 00:00:00 GMT, Date=Sun, 19 Mar 2023 10:48:49 GMT, Content-Type=text/plain, Location=/urls}
+    FormParams: {url=[http://localhost:58433/]}
+Response: [302], execution took 143.71 ms
+    Headers: {Set-Cookie=JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0; Path=/; HttpOnly, Expires=Thu, 01 Jan 1970 00:00:00 GMT, Date=Mon, 20 Mar 2023 11:16:41 GMT, Content-Type=text/plain, Location=/urls}
     No body was set
 ----------------------------------------------------------------------------------
 [JettyServerThreadPool-20] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
 Request: POST [/urls/3/checks]
-    Matching endpoint-handlers: [BEFORE=*, POST=urls/{id}/checks]
-    Headers: {Cookie=JSESSIONID=node016fg0sxmy6e4j1k79q5gfmmm320.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:42643, Accept-Encoding=gzip, Content-Length=0}
-    Cookies: {JSESSIONID=node016fg0sxmy6e4j1k79q5gfmmm320.node0}
+    Matching endpoint-handlers: [BEFORE=*, POST=/urls/{id}/checks]
+    Headers: {Cookie=JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:33069, Accept-Encoding=gzip, Content-Length=0}
+    Cookies: {JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0}
     Body: 
     QueryString: null
     QueryParams: {}
     FormParams: {}
-Response: [302], execution took 143.08 ms
-    Headers: {Date=Sun, 19 Mar 2023 10:48:50 GMT, Content-Type=text/plain, Location=/urls/3}
+Response: [302], execution took 178.03 ms
+    Headers: {Date=Mon, 20 Mar 2023 11:16:41 GMT, Content-Type=text/plain, Location=/urls/3}
     No body was set
 ----------------------------------------------------------------------------------
-[JettyServerThreadPool-23] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+[JettyServerThreadPool-20] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
 Request: GET [/urls/3]
     Matching endpoint-handlers: [BEFORE=*, GET=/urls/{id}]
-    Headers: {Cookie=JSESSIONID=node016fg0sxmy6e4j1k79q5gfmmm320.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:42643, Accept-Encoding=gzip}
-    Cookies: {JSESSIONID=node016fg0sxmy6e4j1k79q5gfmmm320.node0}
+    Headers: {Cookie=JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:33069, Accept-Encoding=gzip}
+    Cookies: {JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0}
     Body: 
     QueryString: null
     QueryParams: {}
     FormParams: {}
-Response: [200], execution took 1189.67 ms
-    Headers: {Content-Encoding=gzip, Date=Sun, 19 Mar 2023 10:48:50 GMT, Content-Type=text/html}
+Response: [200], execution took 1369.89 ms
+    Headers: {Content-Encoding=gzip, Date=Mon, 20 Mar 2023 11:16:41 GMT, Content-Type=text/html}
     Body is gzipped (3080 bytes, not logged)
 ----------------------------------------------------------------------------------
+[Test worker] INFO io.ebean.DDL - Executing /truncate.sql - 4 statements, autoCommit:false
+[Test worker] INFO io.ebean.DDL - Executing /seed-test-db.sql - 1 statements, autoCommit:false
+[JettyServerThreadPool-22] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: POST [/urls]
+    Matching endpoint-handlers: [BEFORE=*, POST=/urls]
+    Headers: {Cookie=JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:33069, Accept-Encoding=gzip, Content-Length=24, Content-Type=application/x-www-form-urlencoded; charset=UTF-8}
+    Cookies: {JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0}
+    Body: url=https%3A%2F%2Fvk.com
+    QueryString: null
+    QueryParams: {}
+    FormParams: {url=[https://vk.com]}
+Response: [302], execution took 1.98 ms
+    Headers: {Date=Mon, 20 Mar 2023 11:16:43 GMT, Content-Type=text/plain, Location=/urls}
+    No body was set
+----------------------------------------------------------------------------------
+[JettyServerThreadPool-22] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: GET [/urls]
+    Matching endpoint-handlers: [BEFORE=*, GET=/urls]
+    Headers: {Cookie=JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:33069, Accept-Encoding=gzip}
+    Cookies: {JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0}
+    Body: 
+    QueryString: null
+    QueryParams: {}
+    FormParams: {}
+Response: [200], execution took 87.20 ms
+    Headers: {Content-Encoding=gzip, Date=Mon, 20 Mar 2023 11:16:43 GMT, Content-Type=text/html}
+    Body is gzipped (3530 bytes, not logged)
+----------------------------------------------------------------------------------
+[Test worker] INFO io.ebean.DDL - Executing /truncate.sql - 4 statements, autoCommit:false
+[Test worker] INFO io.ebean.DDL - Executing /seed-test-db.sql - 1 statements, autoCommit:false
+[JettyServerThreadPool-25] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: POST [/urls]
+    Matching endpoint-handlers: [BEFORE=*, POST=/urls]
+    Headers: {Cookie=JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:33069, Accept-Encoding=gzip, Content-Length=23, Content-Type=application/x-www-form-urlencoded; charset=UTF-8}
+    Cookies: {JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0}
+    Body: url=https%3A%2F%2Fya.ru
+    QueryString: null
+    QueryParams: {}
+    FormParams: {url=[https://ya.ru]}
+Response: [302], execution took 2.35 ms
+    Headers: {Date=Mon, 20 Mar 2023 11:16:43 GMT, Content-Type=text/plain, Location=/urls}
+    No body was set
+----------------------------------------------------------------------------------
+[Test worker] INFO io.ebean.DDL - Executing /truncate.sql - 4 statements, autoCommit:false
+[Test worker] INFO io.ebean.DDL - Executing /seed-test-db.sql - 1 statements, autoCommit:false
+[JettyServerThreadPool-25] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: GET [/urls]
+    Matching endpoint-handlers: [BEFORE=*, GET=/urls]
+    Headers: {Cookie=JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:33069, Accept-Encoding=gzip}
+    Cookies: {JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0}
+    Body: 
+    QueryString: null
+    QueryParams: {}
+    FormParams: {}
+Response: [200], execution took 51.19 ms
+    Headers: {Content-Encoding=gzip, Date=Mon, 20 Mar 2023 11:16:43 GMT, Content-Type=text/html}
+    Body is gzipped (3784 bytes, not logged)
+----------------------------------------------------------------------------------
+[Test worker] INFO io.ebean.DDL - Executing /truncate.sql - 4 statements, autoCommit:false
+[Test worker] INFO io.ebean.DDL - Executing /seed-test-db.sql - 1 statements, autoCommit:false
+[Test worker] INFO io.ebean.DDL - Executing /truncate.sql - 4 statements, autoCommit:false
+[Test worker] INFO io.ebean.DDL - Executing /seed-test-db.sql - 1 statements, autoCommit:false
+[JettyServerThreadPool-22] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: GET [/]
+    Matching endpoint-handlers: [BEFORE=*, GET=/]
+    Headers: {Cookie=JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:33069, Accept-Encoding=gzip}
+    Cookies: {JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0}
+    Body: 
+    QueryString: null
+    QueryParams: {}
+    FormParams: {}
+Response: [200], execution took 25.85 ms
+    Headers: {Content-Encoding=gzip, Date=Mon, 20 Mar 2023 11:16:43 GMT, Content-Type=text/html}
+    Body is gzipped (2858 bytes, not logged)
+----------------------------------------------------------------------------------
+[JettyServerThreadPool-22] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: POST [/urls]
+    Matching endpoint-handlers: [BEFORE=*, POST=/urls]
+    Headers: {Cookie=JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:33069, Accept-Encoding=gzip, Content-Length=9, Content-Type=application/x-www-form-urlencoded; charset=UTF-8}
+    Cookies: {JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0}
+    Body: url=ya.ru
+    QueryString: null
+    QueryParams: {}
+    FormParams: {url=[ya.ru]}
+Response: [302], execution took 0.48 ms
+    Headers: {Date=Mon, 20 Mar 2023 11:16:43 GMT, Content-Type=text/plain, Location=/}
+    No body was set
+----------------------------------------------------------------------------------
+[JettyServerThreadPool-22] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: GET [/]
+    Matching endpoint-handlers: [BEFORE=*, GET=/]
+    Headers: {Cookie=JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:33069, Accept-Encoding=gzip}
+    Cookies: {JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0}
+    Body: 
+    QueryString: null
+    QueryParams: {}
+    FormParams: {}
+Response: [200], execution took 11.24 ms
+    Headers: {Content-Encoding=gzip, Date=Mon, 20 Mar 2023 11:16:43 GMT, Content-Type=text/html}
+    Body is gzipped (3117 bytes, not logged)
+----------------------------------------------------------------------------------
+[Test worker] INFO io.ebean.DDL - Executing /truncate.sql - 4 statements, autoCommit:false
+[Test worker] INFO io.ebean.DDL - Executing /seed-test-db.sql - 1 statements, autoCommit:false
+[Test worker] INFO io.ebean.DDL - Executing /truncate.sql - 4 statements, autoCommit:false
+[Test worker] INFO io.ebean.DDL - Executing /seed-test-db.sql - 1 statements, autoCommit:false
+[JettyServerThreadPool-25] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: GET [/urls/1]
+    Matching endpoint-handlers: [BEFORE=*, GET=/urls/{id}]
+    Headers: {Cookie=JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:33069, Accept-Encoding=gzip}
+    Cookies: {JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0}
+    Body: 
+    QueryString: null
+    QueryParams: {}
+    FormParams: {}
+Response: [200], execution took 28.01 ms
+    Headers: {Content-Encoding=gzip, Date=Mon, 20 Mar 2023 11:16:43 GMT, Content-Type=text/html}
+    Body is gzipped (2581 bytes, not logged)
+----------------------------------------------------------------------------------
 [Test worker] INFO io.javalin.Javalin - Stopping Javalin ...
+[JettyServerThreadPool-25] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: GET [/urls]
+    Matching endpoint-handlers: [BEFORE=*, GET=/urls]
+    Headers: {Cookie=JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:33069, Accept-Encoding=gzip}
+    Cookies: {JSESSIONID=node01tl62u46tps7gjyc09rgbnx160.node0}
+    Body: 
+    QueryString: null
+    QueryParams: {}
+    FormParams: {}
+Response: [200], execution took 21.00 ms
+    Headers: {Content-Encoding=gzip, Date=Mon, 20 Mar 2023 11:16:43 GMT, Content-Type=text/html}
+    Body is gzipped (3272 bytes, not logged)
+----------------------------------------------------------------------------------
 [Test worker] INFO io.javalin.Javalin - Javalin has stopped
 </pre>
 </span>
@@ -271,7 +337,7 @@ Response: [200], execution took 1189.67 ms
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.5.1</a> at 19 Mar 2023, 13:48:51</p>
+<a href="http://www.gradle.org">Gradle 7.5.1</a> at 20 Mar 2023, 14:16:43</p>
 </div>
 </div>
 </body>
