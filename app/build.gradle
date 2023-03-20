@@ -63,7 +63,6 @@ checkstyle {
     checkstyleTest.enabled = false
 }
 
-/*
 test {
     useJUnitPlatform()
     finalizedBy jacocoTestReport
@@ -87,31 +86,6 @@ testlogger {
 
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
-}
-
-task generateMigrations(type: JavaExec) {
-    classpath = sourceSets.main.runtimeClasspath
-    mainClass = 'hexlet.code.MigrationGenerator'
-}
-
-task stage(dependsOn: ['clean', 'installDist'])
-installDist.mustRunAfter clean*/
-test {
-    useJUnitPlatform()
-}
-
-testlogger {
-    showStandardStreams true
-}
-
-jacocoTestReport {
-    reports {
-        xml.required = true
-    }
-}
-
-checkstyle {
-    toolVersion '10.0'
 }
 
 task generateMigrations(type: JavaExec) {

@@ -1,4 +1,3 @@
-
 setup:
 	make -C app setup
 
