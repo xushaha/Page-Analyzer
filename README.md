@@ -1,4 +1,6 @@
-[Page Analyzer](https://page-analyzer-ho03.onrender.com/)– a website that analyzes whether the specified pages are suitable for SEO. Demo: https://page-analyzer-ho03.onrender.com/
+[Page Analyzer](https://page-analyzer-ho03.onrender.com/)– a website that analyzes whether the specified pages are suitable for SEO.
+
+Demo: https://page-analyzer-ho03.onrender.com/
 
 
 ### Hexlet tests and linter status:
@@ -23,5 +25,6 @@
 ![List of pages to check](https://github.com/xushaha/java-project-72/blob/main/app/src/main/resources/screenshots/02.png)
 
 <h4>Completed check</h4>
-![enter image description here](https://github.com/xushaha/java-project-72/blob/main/app/src/main/resources/screenshots/03.png)
+
+![Completed check](https://github.com/xushaha/java-project-72/blob/main/app/src/main/resources/screenshots/03.png)
 
