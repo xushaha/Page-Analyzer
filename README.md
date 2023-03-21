@@ -16,12 +16,12 @@
 
 <h4>Main page</h4>
 
-![Main page](https://freeimage.host/i/HhAb0P9)
+![Main page](https://github.com/xushaha/java-project-72/blob/main/app/src/main/resources/screenshots/01.png)
 
 <h4>List of pages to check</h4>
 
-![List of pages to check](https://freeimage.host/i/HhAmfUu)
+![List of pages to check](https://github.com/xushaha/java-project-72/blob/main/app/src/main/resources/screenshots/02.png)
 
 <h4>Completed check</h4>
-![enter image description here](https://freeimage.host/i/HhAmW0X)
+![enter image description here](https://github.com/xushaha/java-project-72/blob/main/app/src/main/resources/screenshots/03.png)
 
