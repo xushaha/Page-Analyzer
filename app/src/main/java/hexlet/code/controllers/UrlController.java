@@ -12,6 +12,7 @@ import kong.unirest.UnirestException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import java.net.MalformedURLException;
 
 import java.net.URL;
 import java.util.List;
@@ -28,8 +29,9 @@ public class UrlController {
         URL url;
 
         try {
+            assert name != null;
             url = new URL(name);
-        } catch (Exception e) {
+        } catch (MalformedURLException e) {
             ctx.sessionAttribute("flash", "Ссылка некорректная");
             ctx.sessionAttribute("flash-type", "danger");
             ctx.redirect("/");
@@ -91,6 +93,7 @@ public class UrlController {
                 .id.equalTo(id)
                 .findOne();
         if (url == null) {
+            ctx.sessionAttribute("flash", "Страница не найдена");
             ctx.sessionAttribute("flash-type", "info");
             ctx.redirect("/");
         }

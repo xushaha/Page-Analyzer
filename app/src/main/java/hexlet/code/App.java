@@ -16,25 +16,28 @@ import static io.javalin.apibuilder.ApiBuilder.get;
 import static io.javalin.apibuilder.ApiBuilder.post;
 
 public class App {
+    static Logger logger = LoggerFactory.getLogger(App.class);
+    private static final String PORT = "8080";
+    private static final String DEVELOPMENT = "development";
+    private static final String PRODUCTION = "production";
 
     public static void main(String[] args) {
-        Logger logger = LoggerFactory.getLogger(App.class);
         Javalin app = getApp();
         app.start();
         logger.info("Page loaded");
     }
 
     private static String getMode() {
-        return System.getenv().getOrDefault("APP_ENV", "development");
+        return System.getenv().getOrDefault("APP_ENV", DEVELOPMENT);
     }
 
     private static int getPort() {
-        String port = System.getenv().getOrDefault("PORT", "8080");
-        return Integer.valueOf(port);
+        String port = System.getenv().getOrDefault("PORT", PORT);
+        return Integer.parseInt(port);
     }
 
     private static boolean isProduction() {
-        return getMode().equals("production");
+        return getMode().equals(PRODUCTION);
     }
 
     public static Javalin getApp() {

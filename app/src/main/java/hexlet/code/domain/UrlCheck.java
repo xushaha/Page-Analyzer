@@ -25,6 +25,9 @@ public final class UrlCheck extends Model {
     @ManyToOne
     private Url url;
 
+    public UrlCheck() {
+    }
+
     public UrlCheck(int statusCode, String title, String h1, String description, Url url) {
         this.statusCode = statusCode;
         this.title = title;

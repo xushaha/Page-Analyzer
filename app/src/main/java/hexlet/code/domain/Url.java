@@ -14,20 +14,20 @@ import java.util.List;
 @Entity
 public final class Url extends Model {
 
-    // Указываем, что поле является первичным ключом
-    // Значение будет генерироваться автоматически
-    @Id //Specifies the primary key of an entity.
+    @Id
     private long id;
     private String name;
-    @WhenCreated // Значение будет генерироваться автоматически
+    @WhenCreated
     private Instant createdAt;
     @OneToMany
     private List<UrlCheck> urlChecks;
 
+    public Url() {
+    }
+
     public Url(String name) {
         this.name = name;
     }
-
 
     public long getId() {
         return id;
