@@ -1,5 +1,6 @@
 package hexlet.code.controllers;
 
+import hexlet.code.App;
 import hexlet.code.domain.Url;
 import hexlet.code.domain.UrlCheck;
 import hexlet.code.domain.query.QUrl;
@@ -12,16 +13,21 @@ import kong.unirest.UnirestException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.net.MalformedURLException;
 
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static io.ebean.DB.save;
 
 public class UrlController {
+    private static final Logger logger = LoggerFactory.getLogger(App.class);
 
     public static Handler addUrl = ctx -> {
         String name = ctx.formParam("url");
@@ -29,9 +35,10 @@ public class UrlController {
         URL url;
 
         try {
-            assert name != null;
-            url = new URL(name);
+            logger.debug("Trying to get link {}", name);
+            url = new URL(Objects.requireNonNull(name));
         } catch (MalformedURLException e) {
+            logger.debug("Invalid link");
             ctx.sessionAttribute("flash", "Ссылка некорректная");
             ctx.sessionAttribute("flash-type", "danger");
             ctx.redirect("/");
@@ -40,11 +47,13 @@ public class UrlController {
 
         String normalizedUrl = url.getProtocol() + "://" + url.getAuthority();
 
+        logger.debug("Check if the link {} already exists", normalizedUrl);
         Url urlFromDb = new QUrl()
                 .name.equalTo(normalizedUrl)
                 .findOne();
 
         if (urlFromDb != null) {
+            logger.debug("Link {} already exists", normalizedUrl);
             ctx.sessionAttribute("flash", "Ссылка уже добавлена");
             ctx.sessionAttribute("flash-type", "info");
             ctx.redirect("/urls");
@@ -53,6 +62,7 @@ public class UrlController {
 
         Url urlForSave = new Url(normalizedUrl);
         save(urlForSave);
+        logger.info("Link added");
         ctx.sessionAttribute("flash", "Страница успешно добавлена");
         ctx.sessionAttribute("flash-type", "success");
 
@@ -93,6 +103,7 @@ public class UrlController {
                 .id.equalTo(id)
                 .findOne();
         if (url == null) {
+            logger.debug("Link is not found");
             ctx.sessionAttribute("flash", "Страница не найдена");
             ctx.sessionAttribute("flash-type", "info");
             ctx.redirect("/");
@@ -110,6 +121,7 @@ public class UrlController {
                 .findOne();
 
         if (url == null) {
+            logger.debug("Url is not found");
             throw new NotFoundResponse(String.format("Url with id=%d is not found", id));
         }
 
@@ -128,10 +140,12 @@ public class UrlController {
             UrlCheck urlCheck = new UrlCheck(statusCode, title, h1, description, url);
             urlCheck.save();
 
+            logger.info("The page has been checked");
             ctx.sessionAttribute("flash", "Страница успешно проверена");
             ctx.sessionAttribute("flash-type", "success");
 
         } catch (UnirestException e) {
+            logger.debug("The page has not been checked");
             ctx.sessionAttribute("flash", "Не удалось проверить страницу");
             ctx.sessionAttribute("flash-type", "danger");
         }
