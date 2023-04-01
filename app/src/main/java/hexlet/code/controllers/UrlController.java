@@ -27,7 +27,7 @@ import java.util.stream.IntStream;
 import static io.ebean.DB.save;
 
 public class UrlController {
-    private static final Logger logger = LoggerFactory.getLogger(App.class);
+    private static Logger logger = LoggerFactory.getLogger(App.class);
 
     public static Handler addUrl = ctx -> {
         String name = ctx.formParam("url");

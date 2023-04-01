@@ -16,7 +16,7 @@ import static io.javalin.apibuilder.ApiBuilder.get;
 import static io.javalin.apibuilder.ApiBuilder.post;
 
 public class App {
-    private static final Logger logger = LoggerFactory.getLogger(App.class);
+    private static Logger logger = LoggerFactory.getLogger(App.class);
     private static final String PORT = "8080";
     private static final String DEVELOPMENT = "development";
     private static final String PRODUCTION = "production";
